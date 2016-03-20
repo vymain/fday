@@ -1,0 +1,33 @@
+.tab {
+  padding-left: 10px;
+}
+
+.custom-wrapper {
+  margin: 0 50px;
+}
+
+.day-events, .event-supplies{
+  margin-top: -75px;
+}
+
+.day-title, .supply-name {
+  font-size: 20px;
+}
+
+.btn-add-day-event, .btn-upload {
+  margin-top: 40px;
+}
+
+.li-day-events, .li-supplies {
+  margin-top: 20px;
+}
+
+.btn-fd-title {
+  width: 150px;
+  margin-right: 25px;
+}
+
+.user-fd-avatar {
+  height: 100%;
+  max-height: 300px;
+}

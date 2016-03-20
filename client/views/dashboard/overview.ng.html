@@ -1,0 +1,23 @@
+<div ng-controller="OverviewCtrl">
+	<h2><small>Try to find a group</small></h2>
+	<input type="text" name="groupSearch" placeholder="Type the group name" ng-model="groupSearchInput">
+	<div class="jumbotron">
+		<div class="container">
+			<h1>Welcome!</h1>
+			Here you can overview your groups or create one <br /><br />
+			<p>
+				<a ui-sref="newgroup" class="btn btn-primary btn-lg btn-outline">Create group</a>
+			</p>
+		</div>
+	</div>
+	<div class="custom-wrapper">
+		  <div ng-repeat="group in groupsData" class="col-md-4">
+		    <h3 class="text"><span>{{group.name}}</span><a ng-if="isAllowGroupView(group.creator, group.members)" ui-sref="usergroup({groupName:group.link})"><small class="tab">visit group</small></a></h3>
+		    <div><b>participants</b>: {{group.membersCount}}</div>
+		    <div><b>creator</b>: {{group.creator}}</div>
+		    <div ng-if="isAllow(group.name)">
+		    	<button ng-click="participate(group.name)" class="btn btn-md btn-outline">Ask for participation</button>
+			</div>
+		  </div>
+	</div>
+</div>

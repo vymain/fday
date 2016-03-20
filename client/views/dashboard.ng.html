@@ -1,0 +1,27 @@
+<div class="dashboard-page">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar">
+
+       <div class="text-center">
+        <h2 class="brand">Friends Day</h2>
+        <img src="{{avatar}}" class="user-avatar" /><br />
+        <h4>{{user}}</h4>
+        <a ui-sref="login" class="btn btn-white btn-outline btn-sm" ng-click='logout()'>Logout</a>
+      </div>
+
+      <ul class="nav nav-sidebar">
+        <li ng-class="{active: $state.includes('overview')}">
+          <a ui-sref="overview">Overview <span class="sr-only">(current)</span></a>
+        </li>
+        <li ng-class="{active: $state.includes('settings')}">
+          <a ui-sref="settings">Settings</a>
+        </li>
+      </ul>
+
+    </div>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ui-view>
+    </div>
+  </div>
+</div>
+</div>

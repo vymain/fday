@@ -1,0 +1,40 @@
+<div ng-controller="dayEventCtrl">
+<a href="#/dashboard/usergroup/{{customEvent.parentgroup}}" ui-sref="usergroup" class="pull-right btn btn-primary btn-lg btn-outline">Back to Group</a>
+  <header>
+    <h2>{{customEvent.title}}</h2>
+  </header>
+  <div class="jumbotron">
+      <h4>Event purpose:</h4> {{customEvent.description}}
+  </div>
+
+<div class="custom-wrapper">
+  <div class="users">
+    <h3>Participants:</h3>
+    <div ng-repeat="user in customEventParticipants" class="liUsers">
+      <button class="delete" ng-click="removeUser(user.username)">&times;</button>
+      <span class="text">{{user.username}}</span>
+      <span class="pull-right">{{user.state}}</span>
+    </div>
+  </div>
+
+  <div class="event-supplies pull-right">
+  <h3>Requested Supplies:</h3>
+    <div ng-if="isSuppliesChosen()">
+        <span>No supplies chosen</span>
+    </div>
+    <div ng-repeat="supply in customEventSupplies" class="li-supplies">
+      <a ui-sref="supply({supplyName:supply.link})"><span class="text supply-name">{{supply.name}}</span></a>
+      <div>{{supply.description}}</div>
+      <div>{{supply.price}}</div>
+      <div>{{supply.quantity}}</div>
+      <button class="delete" ng-click="removeSupply(supply.name)">remove</button>
+    </div>
+    
+    <br>
+    <div><a ui-sref="supplieslist" class="btn btn-primary btn-lg">Add supply</a></div>
+    <br>
+    <div><a ui-sref="newsupply" class="btn btn-primary btn-lg">Create new supply</a></div>
+  </div>
+</div>
+
+</div>

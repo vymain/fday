@@ -1,0 +1,43 @@
+<div ng-controller="userGroupCtrl">
+  <header>
+    <h2>{{customGroup.name}}</h2>
+  </header>
+  <div class="jumbotron">
+      <h4>Group purpose:</h4> {{customGroup.description}}
+  </div>
+
+  <div class="custom-wrapper">
+    <div class="users">
+      <h3>Participants:</h3>
+      <div ng-repeat="user in customGroupMembers" class="liUsers">
+        <button class="delete" ng-click="removeUser(user.username)">&times;</button>
+        <span class="text">{{user.username}}</span>
+        <span class="pull-right">{{user.state}}</span>
+      </div>
+      <h3>Request for participation:</h3>
+      <div ng-if="isAwaitingUsers()">
+          <span>No users awaiting</span>
+      </div>
+      <div ng-repeat="waitingUser in customGroupAwaits" class="liUsers">
+        <span class="text">{{waitingUser.username}}</span>
+        <span class="pull-right">{{waitingUser.state}}</span>
+        <button ng-click="allowAwaitingUser(waitingUser.username)" class="btn btn-sm">Allow</button>
+        <button ng-click="denyAwaitingUser(waitingUser.username)" class="btn btn-sm">Deny</button>
+      </div>
+    </div>
+
+    <div class="day-events pull-right">
+      <h3>Available Events:</h3>
+      <div ng-if="isEventsAvailability()">
+          <span>No started events yet</span>
+      </div>
+      <div ng-repeat="dayevent in customGroupDayevents" class="li-day-events">
+        <button class="delete" ng-click="removeDayevent(dayevent.title)"></button>
+        <a ui-sref="dayevent({evenTitle:dayevent.link})"><span class="day-title">{{dayevent.title}}</span></a>
+        <div><b>status</b>: {{dayevent.status}} </div>
+        <div><b>participants</b>: {{dayevent.paticipantsCount}}</div>
+      </div>
+      <div ng-if="isCreator()" class="btn-add-day-event"><a ui-sref="newevent" class="btn btn-primary btn-lg">Add Day Event</a></div>
+    </div>
+  </div>
+</div>

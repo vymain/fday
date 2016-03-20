@@ -1,0 +1,10 @@
+<div ng-controller="supplyCtrl">
+<a href="#/dashboard/dayevent/{{parentEvent}}" ui-sref="dayevent" class="pull-right btn btn-primary btn-lg btn-outline">Back to Event</a>
+  <header>
+    <h2>{{currentSupply.name}}</h2>
+  </header>
+  <div class="jumbotron">
+      <h4>Description:</h4> {{currentSupply.description}}
+      <h4>Price:</h4> {{currentSupply.price}}
+  </div>
+</div>

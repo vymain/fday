@@ -1,0 +1,14 @@
+<div ng-controller="supplyCtrl">
+<a href="#/dashboard/usergroup/{{currentGroup}}" ui-sref="usergroup" class="pull-right btn btn-primary btn-lg btn-outline">Back to Group</a>
+	<h2><small>Here you can view all supplies, ever created in your group, and add each one tj the current event</small></h2>
+	<div class="custom-wrapper">
+		<div ng-repeat="supply in currentGroupSupplies" class="li-supplies col-md-4">
+		    <h3 class="text"><span>{{supply.name}}</span></h3>
+		    <div><b>description</b>: {{supply.description}}</div>
+		    <div><b>price</b>: {{supply.price}}</div>
+		    <div>
+		    	<button ng-click="addSupplyToCurrentEvent(supply.name)" class="btn btn-md btn-outline">Add Supply</button>
+			</div>
+		  </div>
+	</div>
+</div>

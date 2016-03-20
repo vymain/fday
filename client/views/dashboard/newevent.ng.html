@@ -1,0 +1,15 @@
+<div ng-controller="userGroupCtrl">
+<a href="#/dashboard/usergroup/{{customGroup.link}}" ui-sref="usergroup" class="pull-right btn btn-primary btn-lg btn-outline">Back to Group</a>
+	<form role="form" ng-submit="createDayEvent(evenTitle, eventDesc);">
+		<div class="form-content">
+			<div class="form-group">
+				<input type="text" class="input-lg" id="" placeholder="day event title" ng-model="evenTitle">
+			</div>
+
+			<div class="form-group">
+				<input type="text" class="input-lg" id="" placeholder="description" ng-model="eventDesc">
+			</div>
+		</div>
+		<button type="submit" class="btn btn-primary btn-lg">Submit</button>
+	</form>
+</div>

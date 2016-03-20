@@ -1,0 +1,19 @@
+<div ng-controller="dayEventCtrl">
+<a href="#/dashboard/dayevent/{{customEvent.link}}" ui-sref="dayevent" class="pull-right btn btn-primary btn-lg btn-outline">Back to Event</a>
+	<form role="form" ng-submit="createsupply(title, description, price);">
+		<div class="form-content">
+			<div class="form-group">
+				<input type="text" class="input-lg" placeholder="add supply title here" ng-model="title">
+			</div>
+
+			<div class="form-group">
+				<input type="text" class="input-lg" placeholder="add description" ng-model="description">
+			</div>
+
+			<div class="form-group">
+				<input type="text" class="input-lg" placeholder="add price" ng-model="price">
+			</div>
+		</div>
+		<button type="submit" class="btn btn-primary btn-lg">Submit</button>
+	</form>
+</div>

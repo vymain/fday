@@ -1,0 +1,26 @@
+<div class="login-page">
+	<div class="row">
+		<div class="col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4">
+        	<img src="logo.jpg" class="user-fd-avatar">
+			<h1>Friends Day</h1>
+			<h3>Get ready for it!</h3>
+			<form role="form" ng-submit="submit(email, passwd);email='';passwd='';">
+
+				<div class="form-content">
+					<div class="form-group">
+						<input type="text" class="form-control input-underline input-lg" id="" ng-model="email" placeholder="Email">
+					</div>
+
+					<div class="form-group">
+						<input type="password" class="form-control input-underline input-lg" id="" ng-model="passwd" placeholder="Password">
+					</div>
+				</div>
+				<p ng-show="loginFailed">Login unsuccessful</p>
+				<button type="submit" class="btn btn-white btn-outline btn-lg btn-fd-title">Login</button>
+				<a ui-sref="signup"><button type="button" class="btn btn-white btn-outline btn-lg btn-fd-title">Register</button></a>
+			</form>
+
+		</div>	
+	</div>
+
+</div>
